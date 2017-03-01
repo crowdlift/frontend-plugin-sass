@@ -24,7 +24,7 @@ const getSassLoader = (config) => {
   const cssLoaders = getCssLoaders(config);
   const sassLoaderOptions = {
     sourceMap: config.ENV_DEVELOPMENT,
-    includePaths: [config.dirs.css],
+    includePaths: [config.dir.css],
   };
   const sassLoaders = cssLoaders.concat([{
     loader: 'sass-loader',
@@ -54,7 +54,7 @@ const getSassLoader = (config) => {
 };
 
 const setup = (config, webpackConf) => {
-  webpackConf.modules.rules.push(
+  webpackConf.module.rules.push(
     {
       test: /\.scss$/,
       // Note: using 'loader' vs 'use' as workaround for 'unexpected character' error
@@ -62,6 +62,7 @@ const setup = (config, webpackConf) => {
       loader: getSassLoader(config),
     },
   );
+  return webpackConf;
 };
 
 

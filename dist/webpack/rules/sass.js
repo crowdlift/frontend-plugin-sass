@@ -36,7 +36,7 @@ var getSassLoader = function getSassLoader(config) {
   var cssLoaders = getCssLoaders(config);
   var sassLoaderOptions = {
     sourceMap: config.ENV_DEVELOPMENT,
-    includePaths: [config.dirs.css]
+    includePaths: [config.dir.css]
   };
   var sassLoaders = cssLoaders.concat([{
     loader: 'sass-loader',
@@ -61,12 +61,13 @@ var getSassLoader = function getSassLoader(config) {
 };
 
 var setup = function setup(config, webpackConf) {
-  webpackConf.modules.rules.push({
+  webpackConf.module.rules.push({
     test: /\.scss$/,
     // Note: using 'loader' vs 'use' as workaround for 'unexpected character' error
     // TODO: test if upgraded modules now allows for use of rules instead of loader
     loader: getSassLoader(config)
   });
+  return webpackConf;
 };
 
 exports.default = setup;
