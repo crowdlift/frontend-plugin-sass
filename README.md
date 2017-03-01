@@ -1,27 +1,6 @@
 # Frontend Kit Sass Plugin
 
 
-## Usage
-
-```bash
-# After cloning
-yarn install
-
-# Run dev
-yarn start
-
-# Build and deploy production
-yarn build
-yarn deploy
-
-# Add a new package to devDependencies
-yarn add [package] -D
-
-# Upgrade all packages to latest within package.json and yarn.lock paramenters
-yarn upgrade
-# Run npm-check-updates first to upgrade package.json
-```
-
 
 ## Upgrade Packages
 
@@ -36,15 +15,23 @@ ncu -a
 
 # Upgrade to the highest version available packages, including beta
 ncu -a -t
+
+# Upgrade all packages to latest within package.json and yarn.lock paramenters
+yarn upgrade
 ```
 
 
 ## Release Update
 
+```bash
+# Build release
+yarn build
+```
+
 Bump version in package.json and `git commit` it.
 
 ```bash
-# Create a new tag to match version in package.json
+# Create a new tag
 git tag v1.1.2
 # Push to github
 git push origin v3.1.0
