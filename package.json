@@ -1,0 +1,19 @@
+{
+  "name": "frontend-plugin-sass",
+  "version": "0.1.0",
+  "description": "Frontend kit sass plugin.",
+  "private": true,
+  "main": "./index.js",
+  "repository": "crowdlift/frontend-plugin-sass",
+  "homepage": "https://github.com/crowdlift/frontend-plugin-sass",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "extract-text-webpack-plugin": "^2.0.0",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.2"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "frontend-kit": "github:crowdlift/frontend-kit"
+  }
+}
