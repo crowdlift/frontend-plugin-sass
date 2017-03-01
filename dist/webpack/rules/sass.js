@@ -61,7 +61,7 @@ var getSassLoader = function getSassLoader(config) {
 };
 
 var setup = function setup(config, webpackConf) {
-  webpackConf.rules.push({
+  webpackConf.modules.rules.push({
     test: /\.scss$/,
     // Note: using 'loader' vs 'use' as workaround for 'unexpected character' error
     // TODO: test if upgraded modules now allows for use of rules instead of loader
