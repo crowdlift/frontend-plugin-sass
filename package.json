@@ -15,8 +15,8 @@
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.2"
   },
-  "peerDependencies": {},
-  "devDependencies": {
+  "peerDependencies": {
     "frontend-kit": "github:crowdlift/frontend-kit"
-  }
+  },
+  "devDependencies": {}
 }
