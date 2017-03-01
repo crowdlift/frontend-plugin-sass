@@ -7,7 +7,10 @@
   "repository": "crowdlift/frontend-plugin-sass",
   "homepage": "https://github.com/crowdlift/frontend-plugin-sass",
   "scripts": {
-    "build": "babel webpack --out-dir dist/webpack"
+    "build": "babel webpack --out-dir dist/webpack",
+    "clean": "rimraf dist",
+    "prebuild": "cross-env RELEASE=1 npm-run-all -p clean test",
+    "test": "echo No tests implemented yet"
   },
   "license": "UNLICENSED",
   "dependencies": {
