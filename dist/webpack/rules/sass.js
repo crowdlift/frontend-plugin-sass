@@ -32,7 +32,7 @@ var getCssLoaders = function getCssLoaders(config) {
   }];
 };
 
-var getSassLoader = function getSassLoader(config) {
+var setup = function setup(config, webpackConf) {
   var cssLoaders = getCssLoaders(config);
   var sassLoaderOptions = {
     sourceMap: config.ENV_DEVELOPMENT,
@@ -57,16 +57,18 @@ var getSassLoader = function getSassLoader(config) {
       })
     }])
   });
-  return config.ENV_DEVELOPMENT ? sassLoaders : extractSassLoader;
-};
 
-var setup = function setup(config, webpackConf) {
   webpackConf.module.rules.push({
     test: /\.scss$/,
     // Note: using 'loader' vs 'use' as workaround for 'unexpected character' error
     // TODO: test if upgraded modules now allows for use of rules instead of loader
-    loader: getSassLoader(config)
+    loader: config.ENV_DEVELOPMENT ? sassLoaders : extractSassLoader
   });
+
+  if (config.ENV_PRODUCTION) {
+    webpackConf.plugins.push(extractSass);
+  }
+
   return webpackConf;
 };
 

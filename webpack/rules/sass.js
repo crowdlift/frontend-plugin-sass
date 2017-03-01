@@ -20,7 +20,7 @@ const getCssLoaders = config =>
     },
   ];
 
-const getSassLoader = (config) => {
+const setup = (config, webpackConf) => {
   const cssLoaders = getCssLoaders(config);
   const sassLoaderOptions = {
     sourceMap: config.ENV_DEVELOPMENT,
@@ -50,18 +50,20 @@ const getSassLoader = (config) => {
       },
     ],
   });
-  return config.ENV_DEVELOPMENT ? sassLoaders : extractSassLoader;
-};
 
-const setup = (config, webpackConf) => {
   webpackConf.module.rules.push(
     {
       test: /\.scss$/,
       // Note: using 'loader' vs 'use' as workaround for 'unexpected character' error
       // TODO: test if upgraded modules now allows for use of rules instead of loader
-      loader: getSassLoader(config),
+      loader: config.ENV_DEVELOPMENT ? sassLoaders : extractSassLoader,
     },
   );
+
+  if (config.ENV_PRODUCTION) {
+    webpackConf.plugins.push(extractSass);
+  }
+
   return webpackConf;
 };
 
