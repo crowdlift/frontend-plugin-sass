@@ -6,6 +6,9 @@
   "main": "./index.js",
   "repository": "crowdlift/frontend-plugin-sass",
   "homepage": "https://github.com/crowdlift/frontend-plugin-sass",
+  "scripts": {
+    "build": "babel webpack --out-dir dist/webpack"
+  },
   "license": "UNLICENSED",
   "dependencies": {
     "extract-text-webpack-plugin": "^2.0.0",

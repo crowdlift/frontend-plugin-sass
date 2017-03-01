@@ -1,1 +1,3 @@
-export * from './webpack/rules/sass';
+const sass = require('./dist/webpack/rules/sass').setup;
+
+module.exports = sass;
