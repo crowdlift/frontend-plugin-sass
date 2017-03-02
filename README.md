@@ -37,4 +37,10 @@ git tag v1.1.2
 git push origin v3.1.0
 # OR push all tags
 git push origin --tags
+
+
+# Delete local tag
+git tag -d v0.1.1
+# Remove a remote tag
+git push origin :refs/tags/v0.1.1
 ```

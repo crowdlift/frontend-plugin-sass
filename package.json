@@ -1,6 +1,6 @@
 {
-  "name": "frontend-plugin-sass",
-  "version": "0.1.0",
+  "name": "frontendkit-sass",
+  "version": "0.1.1",
   "description": "Frontend kit sass plugin.",
   "private": true,
   "main": "./index.js",
