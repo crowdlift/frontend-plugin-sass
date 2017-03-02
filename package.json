@@ -4,8 +4,8 @@
   "description": "Frontend kit sass plugin.",
   "private": true,
   "main": "./index.js",
-  "repository": "crowdlift/frontend-plugin-sass",
-  "homepage": "https://github.com/crowdlift/frontend-plugin-sass",
+  "repository": "crowdlift/frontendkit-sass",
+  "homepage": "https://github.com/crowdlift/frontendkit-sass",
   "scripts": {
     "build": "babel webpack --out-dir dist/webpack",
     "clean": "rimraf dist",
@@ -20,6 +20,6 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "frontend-kit": "github:crowdlift/frontend-kit"
+    "frontendkit": "github:crowdlift/frontendkit#latest"
   }
 }

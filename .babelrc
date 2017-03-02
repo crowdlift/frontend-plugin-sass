@@ -1,3 +1,3 @@
 {
-  "extends": "./node_modules/frontend-kit/.babelrc"
+  "extends": "./node_modules/frontendkit/.babelrc"
 }
