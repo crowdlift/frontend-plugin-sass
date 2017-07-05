@@ -47,8 +47,8 @@ var setup = function setup(config, webpackConf) {
     disable: config.ENV_DEVELOPMENT
   });
   var extractSassLoader = extractSass.extract({
-    fallbackLoader: 'style-loader',
-    loader: [].concat(_toConsumableArray(cssLoaders.slice(1)), [{
+    fallback: 'style-loader',
+    use: [].concat(_toConsumableArray(cssLoaders.slice(1)), [{
       loader: 'sass-loader',
       options: _extends({}, sassLoaderOptions, {
         outputStyle: 'compressed',
