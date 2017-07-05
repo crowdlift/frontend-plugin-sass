@@ -20,6 +20,6 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "frontendkit": "github:crowdlift/frontendkit#latest"
+    "frontendkit": "github:crowdlift/frontendkit"
   }
 }
